@@ -1,46 +1,29 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
-
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Welcome Everyone ! ! !</div>
-                <p>This is the beggining of your Laravel Journey.</p>
+@extends('main')
+  @section('content')
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                  <h1>Welcome to Social Calendar Application</h1>
+                  <p class="lead">Thank you so much for visiting. 
+                   Log In or SignUp.</p>
+                  <p><a class="btn btn-primary btn-lg" href="#" role="button">Login</a></p>
+                  <p><a class="btn btn-primary btn-lg" href="#" role="button">SignUp</a></p>
+                </div>
             </div>
-        </div>
-    </body>
-</html>
+        </div> <!-- end of header .row -->
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="post">
+                    <h3>Smart scheduling for meetings</h3>
+                    <p>Schedule events quickly by checking coworkers’ availability or layering their calendars in a single view. You can share calendars so people see full event details or just if you are free. </p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+                <hr>
+               
+            </div>
+            <div class="col-md-3 col-md-offset-1">
+                <h2>Sidebar</h2>
+            </div>
+
+  @endsection
