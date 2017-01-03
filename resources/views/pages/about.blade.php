@@ -1,4 +1,7 @@
 @extends('main')  
+
+  @section('title', '| About')
+
   @section('content')
         <div class="row">
             <div class="col-mid-12">
@@ -8,3 +11,7 @@
         </div>
   @endsection
     
+
+ @section('sidebar') 
+
+ @endsection 
