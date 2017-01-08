@@ -11,16 +11,18 @@
 |
 */
 Route::group(['middleware' => ['web']], function(){
-	// Authentication Routes
+	
 	Route::get('contact', 'PagesController@getContact');
 	Route::get('about', 'PagesController@getAbout');
 	Route::get('/', 'PagesController@getIndex');
-
+	
+	// Authentication Routes
+	Route::get('auth/login', 'Auth\AuthController@getLogin');
+	
 	// Registration Routes
 	Route::get('auth/register', 'Auth\AuthController@getRegister');
 	Route::post('auth/register', 'Auth\AuthController@postRegister');
-
-	Route::get('auth/login', 'Auth\AuthController@getLogin');
+	
 
 	Route::get('/home', 'HomeController@index');
 });
