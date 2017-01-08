@@ -10,8 +10,17 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('contact', 'PagesController@getContact');
-Route::get('about', 'PagesController@getAbout');
-Route::get('/', 'PagesController@getIndex');
+Route::group(['middleware' => ['web']], function(){
+	// Authentication Routes
+	Route::get('contact', 'PagesController@getContact');
+	Route::get('about', 'PagesController@getAbout');
+	Route::get('/', 'PagesController@getIndex');
 
+	// Registration Routes
+	Route::get('auth/register', 'Auth\AuthController@getRegister');
+	Route::post('auth/register', 'Auth\AuthController@postRegister');
 
+	Route::get('auth/login', 'Auth\AuthController@getLogin');
+
+	Route::get('/home', 'HomeController@index');
+});
