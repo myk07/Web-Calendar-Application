@@ -11,18 +11,13 @@
 |
 */
 Route::group(['middleware' => ['web']], function(){
-	
-	Route::get('contact', 'PagesController@getContact');
-	Route::get('about', 'PagesController@getAbout');
-	Route::get('/', 'PagesController@getIndex');
-	
-	// Authentication Routes
-	Route::get('auth/login', 'Auth\AuthController@getLogin');
-	
-	// Registration Routes
-	Route::get('auth/register', 'Auth\AuthController@getRegister');
-	Route::post('auth/register', 'Auth\AuthController@postRegister');
-	
+	Route::auth();
+
+	Route::get('/', function () {
+	    return view('welcome');
+	});
 
 	Route::get('/home', 'HomeController@index');
+	Route::get('/calendar', 'PagesController@getCalendar');
+
 });
